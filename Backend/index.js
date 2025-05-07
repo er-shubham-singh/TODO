@@ -33,7 +33,11 @@ dotenv.config();
 const app = express();
 const port = process.env.PORT||1000;
 
-app.use(cors());
+// app.use(cors());
+app.use(cors({
+  origin: 'https://todo-2-bsgr.onrender.com',
+  credentials: true,
+}));
 app.use(express.json());
 
 app.use(mainRouter);
