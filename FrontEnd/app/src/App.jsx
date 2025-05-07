@@ -4,7 +4,7 @@ import RegisterForm from './Component/RegisterForm';
 import LoginForm from './Component/LoginForm';
 import { Route, Routes } from 'react-router-dom';
 import Dashboard from './Component/Dashboard';
-import CheckLogin from './Component/checkLogin';
+import CheckLogin from './Component/CheckLogin';
 
 function App() {
   return (
