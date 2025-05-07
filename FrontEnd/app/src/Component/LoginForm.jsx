@@ -22,11 +22,12 @@ const LoginForm = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    const backendUrl = import.meta.env.VITE_BACKEND_HOST_URL;
     const validationError = validateForm();
     if (validationError) return setError(validationError);
 
     try {
-      const res = await axios.post('http://localhost:8000/login', formData);
+      const res = await axios.post(`${backendUrl}/login`, formData);
       console.log(res.data)
       localStorage.setItem('token', res.data.token);
       navigate('/dashboard');

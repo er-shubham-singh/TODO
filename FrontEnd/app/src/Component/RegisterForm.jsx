@@ -38,11 +38,13 @@ const RegisterForm = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    const backendUrl = import.meta.env.VITE_BACKEND_HOST_URL;
     const validationError = validateForm();
     if (validationError) return setError(validationError);
-
+    
     try {
-      const response = await axios.post('http://localhost:8000/register', formData);
+
+      const response = await axios.post(`${backendUrl}/register`, formData);
       console.log(response.data);
       navigate('/login'); 
     } catch (err) {
